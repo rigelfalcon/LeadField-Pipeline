@@ -17,13 +17,20 @@ gui_brainstorm('CreateProtocol', ProtocolName, 0, 0);
 % Input files
 sFiles = [];
 SubjectNames = {'HCP'};
-RawFiles = {fullfile(pwd,'example data\113922_MEG_anatomy'), fullfile(pwd,'example data\113922_MEG_Restin_unproc\3-Restin\4D\c,rfDC')};
+% RawFiles = {fullfile(pwd,'example data\113922_MEG_anatomy'), fullfile(pwd,'example data\113922_MEG_Restin_unproc\3-Restin\4D\c,rfDC')};
+RawFiles = {...
+    'F:\MEEGfMRI\Data\HCP_S900\105923\MEG\anatomy', ...
+    'F:\MEEGfMRI\Data\HCP_S900\105923\unprocessed\MEG\3-Restin\4D\c,rfDC'};
 
 % Start a new report
 bst_report('Start', sFiles);
 
 % Process: Import anatomy folder
-sFiles = bst_process('CallProcess', 'process_import_anatomy', sFiles, [],     'subjectname', SubjectNames{1},     'mrifile',     {RawFiles{1}, 'HCPv3'},     'nvertices',   6001,     'aseg',        0);
+sFiles = bst_process('CallProcess', 'process_import_anatomy', sFiles, [], ...
+    'subjectname', SubjectNames{1}, ...
+    'mrifile',     {RawFiles{1}, 'HCPv3'},   ...
+    'nvertices',   6001,  ...
+    'aseg',        0);
 
 % Process: Generate BEM surfaces
 sFiles = bst_process('CallProcess', 'process_generate_bem', sFiles, [], ...
@@ -64,12 +71,12 @@ sFiles = bst_process('CallProcess', 'process_headmodel', sFiles, [], ...
     'SplitLength',  4000));
 
 % Save lead field
-load('brainstorm_db\Leadfield_Pipeline\data\HCP\@raw3-Restin_c_rfDC\headmodel_surf_openmeeg.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\data\HCP\@raw3-Restin_c_rfDC\headmodel_surf_openmeeg.mat');
 Gain3d=Gain; Gain = bst_gain_orient(Gain3d, GridOrient);
 save Gain Gain Gain3d;
 
 % Save patch
-load('brainstorm_db\Leadfield_Pipeline\anat\HCP\tess_cortex_mid.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\anat\HCP\tess_cortex_mid.mat');
 save patch Vertices Faces;
 
 % Save and display report

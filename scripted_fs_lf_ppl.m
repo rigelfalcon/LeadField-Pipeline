@@ -17,9 +17,12 @@ gui_brainstorm('CreateProtocol', ProtocolName, 0, 0);
 % Input files
 sFiles = [];
 SubjectNames = {'MC0000010'};
-RawFiles = {fullfile(pwd,'example data\MC0000010_EEG_anatomy_t13d_anatVOL_20060115002658_2.nii_out\mri\T1.mgz'), ...
-    fullfile(pwd,'example data\MC0000010_EEG_anatomy_t13d_anatVOL_20060115002658_2.nii_out'), ...
-    fullfile(pwd,'example data\MC0000010_EEG_data.mat'), ''};
+% RawFiles = {fullfile(pwd,'example data\MC0000010_EEG_anatomy_t13d_anatVOL_20060115002658_2.nii_out\mri\T1.mgz'), ...
+%     fullfile(pwd,'example data\MC0000010_EEG_anatomy_t13d_anatVOL_20060115002658_2.nii_out'), ...
+%     fullfile(pwd,'example data\MC0000010_EEG_data.mat'), ''};
+RawFiles = {'F:\MEEGfMRI\Data\CubaData\CHBMP_FSmri\bad cases\MC0000010_t13d_anatVOL_20060115002658_2.nii_out\mri\T1.mgz', ...
+    'F:\MEEGfMRI\Data\CubaData\CHBMP_FSmri\bad cases\MC0000010_t13d_anatVOL_20060115002658_2.nii_out', ...
+    'F:\MEEGfMRI\Data\CubaData\CHBMP_FSmri\bad cases\MC0000010_EEG_data.mat', ''};
 
 % Start a new report
 bst_report('Start', sFiles);
@@ -31,7 +34,7 @@ sFiles = bst_process('CallProcess', 'process_import_mri', sFiles, [], 'subjectna
 sFiles = bst_process('CallProcess', 'process_mni_affine', sFiles, [], 'subjectname', SubjectNames{1});
 
 % Check Fiducials
-Fiducial =  load('brainstorm_db\Leadfield_Pipeline\anat\MC0000010\subjectimage_T1.mat');
+Fiducial =  load('F:\Data\brainstorm_db\Leadfield_Pipeline\anat\MC0000010\subjectimage_T1.mat');
 
 % Process: Import anatomy folder
 sFiles = bst_process('CallProcess', 'process_import_anatomy', sFiles, [], 'subjectname', SubjectNames{1},     'mrifile',     {RawFiles{2}, 'FreeSurfer'},     'nvertices',   6001, ...
@@ -90,12 +93,12 @@ sFiles = bst_process('CallProcess', 'process_headmodel', sFiles, [], ...
     'SplitLength',  4000));
 
 % Save lead field
-load('brainstorm_db\Leadfield_Pipeline\data\MC0000010\@rawMC0000010_EEG_data\headmodel_surf_openmeeg.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\data\MC0000010\@rawMC0000010_EEG_data\headmodel_surf_openmeeg.mat');
 Gain3d=Gain; Gain = bst_gain_orient(Gain3d, GridOrient);
 save Gain Gain Gain3d;
 
 % Save patch
-load('brainstorm_db\Leadfield_Pipeline\anat\MC0000010\tess_cortex_pial_low.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\anat\MC0000010\tess_cortex_pial_low.mat');
 save patch Vertices Faces;
 
 % Save and display report
