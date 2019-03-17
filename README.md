@@ -15,3 +15,7 @@ Scripted from the brainstorm toolbox ver. Feb. 24 2019 and OpenMEEG-2.4.9999-Win
 4. Run scripted_fs_lf_ppl.m for Freesurfer anatomy files
 5. Run scripted_hcp_lf_ppl.m for HCP (Human Connectome Project) anatomy files
 6. You will see Gain.mat and patch.mat when the calculation is finished.
+
+# Note
+openmeeg ask for Microsoft Visual C++ 2010 Redistributable Package (x64), it can't be install sometimes.
+Please copy vcomp100.dll to C:\Users\<UsersName>\.brainstorm\openmeeg\win64

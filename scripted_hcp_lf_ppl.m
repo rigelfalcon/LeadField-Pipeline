@@ -16,7 +16,7 @@ gui_brainstorm('CreateProtocol', ProtocolName, 0, 0);
 
 % Input files
 sFiles = [];
-SubjectNames = {'HCP'};
+SubjectNames = {'113922'};
 % RawFiles = {fullfile(pwd,'example data\113922_MEG_anatomy'), fullfile(pwd,'example data\113922_MEG_Restin_unproc\3-Restin\4D\c,rfDC')};
 RawFiles = {...
     'F:\MEEGfMRI\Data\HCP_S900\105923\MEG\anatomy', ...
@@ -71,12 +71,12 @@ sFiles = bst_process('CallProcess', 'process_headmodel', sFiles, [], ...
     'SplitLength',  4000));
 
 % Save lead field
-load('F:\Data\brainstorm_db\Leadfield_Pipeline\data\HCP\@raw3-Restin_c_rfDC\headmodel_surf_openmeeg.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\data\113922\@raw3-Restin_c_rfDC\headmodel_surf_openmeeg.mat');
 Gain3d=Gain; Gain = bst_gain_orient(Gain3d, GridOrient);
 save Gain Gain Gain3d;
 
 % Save patch
-load('F:\Data\brainstorm_db\Leadfield_Pipeline\anat\HCP\tess_cortex_mid.mat');
+load('F:\Data\brainstorm_db\Leadfield_Pipeline\anat\113922\tess_cortex_mid.mat');
 save patch Vertices Faces;
 
 % Save and display report
