@@ -19,8 +19,8 @@ sFiles = [];
 SubjectNames = {'113922'};
 % RawFiles = {fullfile(pwd,'example data\113922_MEG_anatomy'), fullfile(pwd,'example data\113922_MEG_Restin_unproc\3-Restin\4D\c,rfDC')};
 RawFiles = {...
-    'F:\MEEGfMRI\Data\HCP_S900\105923\MEG\anatomy', ...
-    'F:\MEEGfMRI\Data\HCP_S900\105923\unprocessed\MEG\3-Restin\4D\c,rfDC'};
+    'F:\MEEGfMRI\Data\andy\113922\MEG\anatomy', ...
+    'F:\MEEGfMRI\Data\andy\113922\unprocessed\MEG\3-Restin\4D\c,rfDC'};
 
 % Start a new report
 bst_report('Start', sFiles);
