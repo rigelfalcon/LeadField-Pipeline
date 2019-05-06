@@ -2,11 +2,11 @@
 % Brainstorm (24-Feb-2019)
 % Andy Hu, Feb. 24, 2019
 
-clc; clear; close all;
-addpath('./brainstorm3');
-if ~brainstorm('status')
-    brainstorm nogui
-end
+% clc; clear; close all;
+% addpath('./brainstorm3');
+% if ~brainstorm('status')
+%     brainstorm nogui
+% end
 
 ProtocolName = 'Leadfield_Pipeline';
 % Delete existing protocol
@@ -29,7 +29,7 @@ bst_report('Start', sFiles);
 sFiles = bst_process('CallProcess', 'process_import_anatomy', sFiles, [], ...
     'subjectname', SubjectNames{1}, ...
     'mrifile',     {RawFiles{1}, 'HCPv3'},   ...
-    'nvertices',   6001,  ...
+    'nvertices',   6000,  ...
     'aseg',        0);
 
 % Process: Generate BEM surfaces
