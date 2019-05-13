@@ -17,5 +17,8 @@ Scripted from the brainstorm toolbox ver. Feb. 24 2019 and OpenMEEG-2.4.9999-Win
 6. You will see Gain.mat and patch.mat when the calculation is finished.
 
 # Note
-openmeeg ask for Microsoft Visual C++ 2010 Redistributable Package (x64), it can't be install sometimes.
-Please copy vcomp100.dll to C:\Users\<UsersName>\.brainstorm\openmeeg\win64
+1. openmeeg ask for Microsoft Visual C++ 2010 Redistributable Package (x64), it can't be install sometimes.
+   Please copy vcomp100.dll to C:\Users\<UsersName>\.brainstorm\openmeeg\win64
+2. example leadfield results: https://lstneuro-my.sharepoint.com/:f:/g/personal/rigel_wang_neuroinformatics-collaboratory_org/EoIaU5La9yJPjdFABQk6_C4B50Z-KPWZJ6KRmN25F3N8nQ?e=dmvV4g
+
+When you use this pipeline, please cite: Hu, Shiang & Pedro A. Valdes-Sosa, et al. 2019. “The Statistics of EEG Unipolar References: Derivations and Properties.” Brain Topography, April. https://doi.org/10.1007/s10548-019-00706-y
