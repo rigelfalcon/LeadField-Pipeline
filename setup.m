@@ -1,4 +1,4 @@
 restoredefaultpath
 %% barinstorm
-addpath('F:\codes\brainstorm3')
+addpath('D:\codes\brainstorm\brainstorm_190210\brainstorm3')
 brainstorm('setpath')
