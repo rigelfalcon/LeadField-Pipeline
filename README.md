@@ -22,5 +22,6 @@ Scripted from the brainstorm toolbox ver. Feb. 24 2019 and OpenMEEG-2.4.9999-Win
 2. example leadfield results: https://lstneuro-my.sharepoint.com/:f:/g/personal/rigel_wang_neuroinformatics-collaboratory_org/EoIaU5La9yJPjdFABQk6_C4B50Z-KPWZJ6KRmN25F3N8nQ?e=dmvV4g
 
 When you use this pipeline, please cite: Hu, Shiang & Pedro A. Valdes-Sosa, et al. 2019. “The Statistics of EEG Unipolar References: Derivations and Properties.” Brain Topography, April. https://doi.org/10.1007/s10548-019-00706-y
-Flow:
+
+# Flow:
 ![Image](https://raw.githubusercontent.com/rigelfalcon/ImageRepository/master/leadfield.jpg)
