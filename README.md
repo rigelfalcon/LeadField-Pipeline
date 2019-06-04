@@ -24,4 +24,6 @@ Scripted from the brainstorm toolbox ver. Feb. 24 2019 and OpenMEEG-2.4.9999-Win
 When you use this pipeline, please cite: Hu, Shiang & Pedro A. Valdes-Sosa, et al. 2019. “The Statistics of EEG Unipolar References: Derivations and Properties.” Brain Topography, April. https://doi.org/10.1007/s10548-019-00706-y
 
 # Flow:
-![Image](https://raw.githubusercontent.com/rigelfalcon/ImageRepository/master/leadfield.jpg)
+![Image](https://raw.githubusercontent.com/rigelfalcon/ImageRepository/master/leadfield.jpg =300x600)
+
+
